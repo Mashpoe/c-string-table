@@ -1,4 +1,4 @@
-# c_hash_table
+# C Hash Table
 Ensures that there is only one instance of each unique value.
 
 This table is based on an [amazing tutorial](http://www.craftinginterpreters.com/hash-tables.html) by Bob Nystrom.
@@ -25,7 +25,11 @@ const char* value = table_get_entry(t, data_str, length);
 table_free(t);
 ```
 
-`table_get_entry(table* t, const void* value, size_t size)` is the main function for this hash table. `t` is just a pointer to a table structure, `value` is a pointer to some kind of data, and `size` is the length (in bytes) of the data. It returns a pointer to some data, which will either be an existing match that was already in the table or a new entry if there was no match. This is how you can be sure there are no duplicate values.
+The main function for this hash table is `table_get_entry`:
+```c
+const void* table_get_entry(table* t, const void* data, size_t size);
+```
+`t` is just a pointer to a table structure, `value` is a pointer to some kind of data, and `size` is the length (in bytes) of the data. It returns a pointer to some data, which will either be an existing match that was already in the table or a new entry if there was no match. This is how you can be sure there are no duplicate values.
 
 `main.c` runs a benchmark for both the O(1) hashmap and a regular O(n) array search with 17,576 string entries each. The output usually looks something like this:
 
