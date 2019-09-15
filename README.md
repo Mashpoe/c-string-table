@@ -12,6 +12,10 @@ If you want to associate a key with a value, you can easily add support for that
 The usage is simple:
 
 ```c
+#include "table.h"
+
+// ...
+
 table* t = table_create();
 
 // ...
