@@ -22,7 +22,6 @@ table* table_create(void);
 void table_free(table* t);
 
 // returns the value of either an existing entry or a new one if no matching value exists
-// assumes ownership of the data if creating a new entry (to avoid copying), frees data if entry exists
 const void* table_get_entry(table* t, const void* value, size_t size);
 
 #endif /* table_h */
