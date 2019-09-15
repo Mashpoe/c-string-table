@@ -1,5 +1,5 @@
-# C Hash Table
-Ensures that there is only one instance of each unique value.
+# C String Table
+Ensures that there is only one copy of each unique string (or any other type of data).
 
 This table is based on an [amazing tutorial](http://www.craftinginterpreters.com/hash-tables.html) by Bob Nystrom.
 
