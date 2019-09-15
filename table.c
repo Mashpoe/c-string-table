@@ -51,6 +51,7 @@ void table_free(table* t) {
 }
 
 uint32_t hash_data(const void* data, size_t size) {
+	// FNV-1a hashing algorithm, the shortest decent hash function, apparently
 	uint32_t hash = 2166136261u;
 	for (size_t i = 0; i < size; i++) {
 		hash ^= ((const char*)data)[i];
